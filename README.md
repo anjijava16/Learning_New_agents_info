@@ -17,3 +17,6 @@ https://huggingface.co/spaces/OctoTools/octotools
 
 
 https://octotools.github.io/tools/generalist_solution_generator/tool.html#example
+
+
+https://www.youtube.com/watch?v=4828sGfx7dk&t=1176s
