@@ -14,3 +14,6 @@ https://arxiv.org/pdf/2502.11271
 https://github.com/octotools/octotools
 
 https://huggingface.co/spaces/OctoTools/octotools
+
+
+https://octotools.github.io/tools/generalist_solution_generator/tool.html#example
