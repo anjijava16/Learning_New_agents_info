@@ -6,3 +6,9 @@ Learning New
 3. https://github.com/camel-ai/owl/tree/main
 
 4. https://pearls-lab.github.io/ai-agents-course/lectures.html
+
+
+# Octotools
+https://arxiv.org/pdf/2502.11271
+
+https://github.com/octotools/octotools
