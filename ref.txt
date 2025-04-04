@@ -1,7 +1,8 @@
+import json
 from typing import Any, Dict, Tuple, Type
 from pydantic import create_model
 
-# Mapping string type names to Python types
+# Map string type names to Python types
 type_map = {
     "str": str,
     "int": int,
@@ -9,25 +10,29 @@ type_map = {
     "bool": bool
 }
 
-def parse_fields(field_str: str) -> Dict[str, Tuple[Any, Any]]:
+def create_dynamic_model_from_json(model_name: str, json_str: str) -> Type:
     """
-    Parse a string like 'temperature:float,condition:str' into a dictionary
-    suitable for create_model.
+    Create a Pydantic model dynamically from JSON string of fields.
+
+    Args:
+        model_name (str): Name of the model.
+        json_str (str): JSON string like '{"temperature": "float", "condition": "str"}'
+
+    Returns:
+        Type: A dynamically created Pydantic model.
     """
-    fields = {}
-    for part in field_str.split(","):
-        name, type_str = part.strip().split(":")
+    fields_dict: Dict[str, str] = json.loads(json_str)
+    fields: Dict[str, Tuple[Any, Any]] = {}
+
+    for field_name, type_str in fields_dict.items():
         py_type = type_map.get(type_str.strip())
-        if py_type is None:
+        if not py_type:
             raise ValueError(f"Unsupported type: {type_str}")
-        fields[name.strip()] = (py_type, ...)
-    return fields
+        fields[field_name] = (py_type, ...)
 
-def create_dynamic_model(model_name: str, field_str: str) -> Type:
-    fields = parse_fields(field_str)
     return create_model(model_name, **fields)
-model_def = "temperature:float,condition:str"
-DynamicModel = create_dynamic_model("WeatherModel", model_def)
+json_input = '{"temperature": "float", "condition": "str"}'
+DynamicWeatherModel = create_dynamic_model_from_json("WeatherModel", json_input)
 
-instance = DynamicModel(temperature=22.5, condition="Cloudy")
+instance = DynamicWeatherModel(temperature=25.0, condition="Rainy")
 print(instance)
