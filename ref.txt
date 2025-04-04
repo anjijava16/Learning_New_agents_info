@@ -1,0 +1,33 @@
+from typing import Any, Dict, Tuple, Type
+from pydantic import create_model
+
+# Mapping string type names to Python types
+type_map = {
+    "str": str,
+    "int": int,
+    "float": float,
+    "bool": bool
+}
+
+def parse_fields(field_str: str) -> Dict[str, Tuple[Any, Any]]:
+    """
+    Parse a string like 'temperature:float,condition:str' into a dictionary
+    suitable for create_model.
+    """
+    fields = {}
+    for part in field_str.split(","):
+        name, type_str = part.strip().split(":")
+        py_type = type_map.get(type_str.strip())
+        if py_type is None:
+            raise ValueError(f"Unsupported type: {type_str}")
+        fields[name.strip()] = (py_type, ...)
+    return fields
+
+def create_dynamic_model(model_name: str, field_str: str) -> Type:
+    fields = parse_fields(field_str)
+    return create_model(model_name, **fields)
+model_def = "temperature:float,condition:str"
+DynamicModel = create_dynamic_model("WeatherModel", model_def)
+
+instance = DynamicModel(temperature=22.5, condition="Cloudy")
+print(instance)
