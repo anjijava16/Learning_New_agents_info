@@ -26,5 +26,3 @@ https://www.youtube.com/watch?v=4828sGfx7dk&t=1176s
 https://github.com/The-Pocket/PocketFlow
 
 
-![image](https://github.com/user-attachments/assets/378e48b1-89f3-4178-8e36-df06ee9ccf73)
-
