@@ -1,5 +1,6 @@
 # Learning_New_agents_info
 Learning New 
+
 # Camel AI
 1. https://www.camel-ai.org/
 2. 
@@ -23,3 +24,7 @@ https://www.youtube.com/watch?v=4828sGfx7dk&t=1176s
 
 # Pocketflow
 https://github.com/The-Pocket/PocketFlow
+
+
+![image](https://github.com/user-attachments/assets/378e48b1-89f3-4178-8e36-df06ee9ccf73)
+
