@@ -23,3 +23,6 @@ https://github.com/The-Pocket/PocketFlow
 
 # Cognee
 https://github.com/topoteretes/cognee
+
+# Letta
+https://github.com/letta-ai/letta
