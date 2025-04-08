@@ -24,8 +24,10 @@ https://github.com/The-Pocket/PocketFlow
 
 # Langmem
 1. https://langchain-ai.github.io/langmem/
+2. https://blog.langchain.dev/langmem-sdk-launch/
 
-2. 
+   
+   
 # Cognee
 https://github.com/topoteretes/cognee
 
